@@ -1464,7 +1464,7 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-contract MocHoliday is ERC721Enumerable, Auth {
+contract StarRacerAlphaClub is ERC721Enumerable, Auth {
     using SafeMath for uint256;
 
     string baseTokenURI;
