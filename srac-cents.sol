@@ -1472,9 +1472,9 @@ contract MocHoliday is ERC721Enumerable, Auth {
 
     uint256 public maxSupply = 10000;
     IERC20 public buyToken;
-    uint256 public price = 10; // USDC price; decimal 6
-    address adminWallet = 0xc99dA7fC1c2c3BCd46B3469A13bAA373144fFF25;
-    uint256 public maxMintNumber = 20;
+    uint256 public price = 10000; // USDC price; decimal 6
+    address adminWallet = ;
+    uint256 public maxMintNumber = 1200;
     uint256 public currentSupply = 0;
 
     uint256 public round = 1;
@@ -1487,8 +1487,8 @@ contract MocHoliday is ERC721Enumerable, Auth {
     event ChangeStatus(bool _value);
     event RoundUpdate(uint256 round, uint256 roundStart, uint256 roundEnd);
 
-    constructor() ERC721("MocHoliday", "MOKH") payable Auth(msg.sender) {
-        buyToken = IERC20(0xeb8f08a975Ab53E34D8a0330E0D34de942C95926);
+    constructor() ERC721("PolygonAlphaClub", "PAC") payable Auth(msg.sender) {
+        buyToken = IERC20(0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174);
     }
 
     function changeStatus() external authorized {
@@ -1502,7 +1502,7 @@ contract MocHoliday is ERC721Enumerable, Auth {
     }
 
     function setMaxMintNumber(uint256 _maxMintNumber) external authorized {
-        require(_maxMintNumber <= 200, "Too many tokens for one mint!");
+        require(_maxMintNumber <= 1200, "Too many tokens for one mint!");
         maxMintNumber = _maxMintNumber;
         emit MaxMintNumber(maxMintNumber);
     }
